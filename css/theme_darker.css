@@ -1,0 +1,96 @@
+/* {"author":"d9x","desc":"N/A","preview":{"bg":"#000000","sidebar_bg":"#0a0a0a","sidebar_border":"#333333","brand":"#3b82f6","text_primary":"#5f5f5f","text_secondary":"#d4d4d4","text_tertiary":"#a1a1aa","text_muted":"#8a8a8a","selected_bg":"#142744","indicator_bg":"#121212","indicator_border":"#2a2a2a","border":"#333333","border_secondary":"#1f1f1f","body_line":"#383838","avatar_read":"#2a2a2a","modal_overlay":"rgba(0, 0, 0, 0.85)"},"license":"Copyright © 2026 d9x\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.","signature":{"type":"Buffer","data":[99,24,51,18,154,69,157,204,118,220,43,59,24,67,146,34,184,124,119,130,215,211,176,172,187,127,201,178,104,118,253,71,88,81,48,62,27,101,72,93,177,246,68,37,146,127,97,113,4,1,10,5,82,203,254,92,31,80,25,0,55,47,129,7]}} */
+.dark {
+    --bg-primary: #000000;
+    --bg-secondary: #161616;
+    --bg-tertiary: #292929;
+    --bg-hover: #1a1a1a;
+    --bg-selected: #142744;
+    --bg-card: #000000;
+    --avatar-bg: #2a2a2a;
+    --avatar-text: #9ca3af;
+    --border-primary: #2d2d2d;
+    --border-secondary: #1f1f1f;
+    --border-thread-divider: #383838;
+    --text-primary: #5f5f5f;
+    --text-secondary: #d4d4d4;
+    --text-tertiary: #a1a1aa;
+    --text-muted: #8a8a8a;
+    --indicator-bg: #121212;
+    --indicator-border: #2a2a2a;
+    --sidebar-bg: #0a0a0a;
+    --sidebar-hover: #0f0f0f;
+    --modal-bg: #121212;
+    --modal-overlay: rgba(0, 0, 0, 0.85);
+    --dropdown-bg: #121212;
+    --dropdown-hover: #252525;
+    --input-bg: #1a1a1a;
+    --input-border: #2a2a2a;
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
+    --color-success: #22c55e;
+    --color-info: #7289da;
+    --background: #09090b;
+    --foreground: #fafafa;
+    --card: #18181b;
+    --card-foreground: #fafafa;
+    --popover: #18181b;
+    --popover-foreground: #fafafa;
+    --primary: #e4e4e7;
+    --primary-foreground: #18181b;
+    --secondary: #27272a;
+    --secondary-foreground: #fafafa;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --accent: #27272a;
+    --accent-foreground: #fafafa;
+    --destructive: #780000;
+    --border: #333333;
+    --input: #2a2a2a;
+    --ring: #71717a;
+    --chart-1: #3b82f6;
+    --chart-2: #2dd4bf;
+    --chart-3: #f4a261;
+    --chart-4: #a855f7;
+    --chart-5: #f43f5e;
+    --sidebar: #000000;
+    --sidebar-foreground: #fafafa;
+    --sidebar-primary: #000000;
+    --sidebar-primary-foreground: #fafafa;
+    --sidebar-accent: #151515;
+    --sidebar-accent-foreground: #fafafa;
+    --sidebar-border: #333333;
+    --sidebar-ring: #71717a;
+    --thread-card-bg: #181818;
+    --thread-card-bg-hover: #222222;
+    --thread-card-border: #2a2a2a;
+    --thread-header-bg: #1a1a1a;
+    --thread-content-bg: #121212;
+}
+
+::-webkit-scrollbar {
+  width: 8px;  /* Slimmer width looks better when floating */
+  height: 8px; /* For horizontal scrollbars */
+}
+
+/* 2. Remove the arrow buttons (triangles) */
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* 3. Make the track entirely invisible */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+/* 4. The draggable slider */
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff; 
+  border-radius: 10px; /* Fully rounded edges */
+}
+
+/* 5. The slider on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ffffff; 
+}

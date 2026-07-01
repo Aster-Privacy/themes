@@ -1,0 +1,624 @@
+html, body, * {
+    font-family: "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace;
+    color: #39ff14; /* Neon Matrix Green */
+    
+}
+
+h1,h2,h3,
+button,
+.active,
+.logo{
+    text-shadow:0 0 8px currentColor;
+}
+[class*="rounded"] {
+    border-radius: 0 !important;
+}
+
+.dark {
+    /* --- Base & Backgrounds (Deep Void & Neon Accents) --- */
+    --bg-primary: #030308;          /* Deep cyber-grid black */
+    --bg-secondary: #0a0a14;        /* Dark tech metal */
+    --bg-tertiary: #121225;         /* Low-light terminal panel */
+    --bg-hover: #1f1f3a;            /* Electric blue-gray shift */
+    --bg-selected: #fe019a;         /* High-voltage magenta selection */
+    --bg-card: #05050f;
+    --avatar-bg: #1a1a2e;
+    --avatar-text: #00ffff;         /* Neon Cyan */
+    
+    /* --- Borders & Grid Lines (Glow & Tech Cuts) --- */
+    --border-primary: #00ffff;      /* Cyan laser line */
+    --border-secondary: #ff007f;    /* Neon Pink/Magenta divider */
+    --border-thread-divider: #39ff14; /* Toxic Green divider */
+    
+    /* --- Typography (High Contrast / Matrix Styling) --- */
+    --text-primary: #39ff14;        /* Main UI Text: Neon Green */
+    --text-secondary: #00ffff;      /* Sub-headers: Neon Cyan */
+    --text-tertiary: #ffff00;       /* Warnings/Accents: Neon Yellow */
+    --text-muted: #4d4d75;          /* Ghost-in-the-shell gray/blue */
+    
+    /* --- Interactive Components --- */
+    --indicator-bg: #1a0033;        /* Deep synthwave purple */
+    --indicator-border: #ff007f;
+    --sidebar-bg: #020205;
+    --sidebar-hover: #121225;
+    --modal-bg: #05050f;
+    --modal-overlay: rgba(3, 3, 8, 0.9);
+    --dropdown-bg: #0a0a14;
+    --dropdown-hover: #ff007f;
+    --input-bg: #000000;
+    --input-border: #00ffff;
+    
+    /* --- Status Alerts (Netrunner Alerts) --- */
+    --color-danger: #ff0055;        /* Critical Hack / Error */
+    --color-warning: #ffea00;       /* Breach Warning */
+    --color-success: #39ff14;       /* System Cleared */
+    --color-info: #00ffff;          /* Data Stream */
+    
+    /* --- System Fallbacks & UI Tokens --- */
+    --background: #030308;
+    --foreground: #39ff14;
+    --card: #05050f;
+    --card-foreground: #00ffff;
+    --popover: #0a0a14;
+    --popover-foreground: #ffff00;
+    --primary: #00ffff;
+    --primary-foreground: #030308;
+    --secondary: #ff007f;
+    --secondary-foreground: #ffffff;
+    --muted: #121225;
+    --muted-foreground: #4d4d75;
+    --accent: #ffff00;
+    --accent-foreground: #030308;
+    --destructive: #ff0055;
+    --border: #00ffff;
+    --input: #000000;
+    --ring: #ff007f;
+    
+    /* --- Charts (Synthwave/Outrun Palette) --- */
+    --chart-1: #00ffff; /* Neon Cyan */
+    --chart-2: #ff007f; /* Neon Pink */
+    --chart-3: #ffff00; /* Neon Yellow */
+    --chart-4: #39ff14; /* Neon Green */
+    --chart-5: #9d00ff; /* Neon Purple */
+    
+    /* --- Sidebar-specific tokens --- */
+    --sidebar: #020205;
+    --sidebar-foreground: #39ff14;
+    --sidebar-primary: #00ffff;
+    --sidebar-primary-foreground: #030308;
+    --sidebar-accent: #ff007f;
+    --sidebar-accent-foreground: #ffffff;
+    --sidebar-border: #ff007f;
+    --sidebar-ring: #00ffff;
+    
+    /* --- Cards & Threads --- */
+    --thread-card-bg: #05050f;
+    --thread-card-bg-hover: #0a0a14;
+    --thread-card-border: #00ffff;
+    --thread-header-bg: #121225;
+    --thread-content-bg: #020205;
+}
+
+/* --- Cyberpunk Laser Scrollbars --- */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+::-webkit-scrollbar-track {
+    background: #030308; 
+    border-left: 1px solid #121225;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00ffff; /* Glowing cyan track runner */
+    box-shadow: 0 0 10px #00ffff;
+    border-radius: 0px; /* Sharp tech edges look more cyber than rounded circles */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ff007f; /* Swaps to laser pink on interaction */
+}
+
+/* --- Custom Components --- */
+.dark .aster_btn_depth {
+    background-image: none;
+    color: #030308;
+    background-color: #ffff00; /* Glitch yellow button */
+    font-weight: bold;
+    border: 1px solid #00ffff;
+    text-shadow: none;
+    box-shadow: 3px 3px 0px #ff007f; /* Cyber-punk shadow offset */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 0px;
+}
+
+.dark .aster_btn_depth:hover {
+    background-color: #ff007f;
+    color: #ffffff;
+    box-shadow: -3px -3px 0px #00ffff;
+    cursor: crosshair; /* Hacker crosshair cursor */
+    border-radius: 0px;
+}
+.aster_btn_lg {
+    cursor: crosshair;
+    border-radius: 0px;
+}
+/* --- Image Overlays (Hologram glitch effects) --- */
+img[alt="Aster"] {
+    filter: hue-rotate(280deg) saturate(200%) contrast(120%); /* Vibrant cyber magenta-purple */
+}
+img[alt="Mail"] {
+    filter: hue-rotate(180deg) saturate(250%) brightness(110%); /* Glowing neon cyan */
+}
+
+/* ===========================
+   CYBERPUNK BUTTONS
+   =========================== */
+/* Selected highlight behind sidebar button */
+.pointer-events-none.absolute.left-0.w-full {
+    border-radius: 0 !important;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% calc(100% - 14px),
+        calc(100% - 14px) 100%,
+        0 100%
+    ) !important;
+
+    overflow: hidden;
+}
+button{
+
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+
+    padding:.75rem 1.4rem;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,0) 30%
+        ),
+        #11111b;
+
+    color:var(--cyber-yellow);
+
+    border:none;
+    border-radius: 0;
+    clip-path:polygon(
+        12px 0,
+        100% 0,
+        100% calc(100% - 12px),
+        calc(100% - 12px) 100%,
+        0 100%,
+        0 12px
+    );
+
+    font-weight:700;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+
+    transition:.18s;
+
+    box-shadow:
+        inset 0 0 0 2px var(--cyber-yellow),
+        inset 0 0 0 4px #000,
+        0 0 0 1px rgba(255,255,255,.05),
+        0 0 25px rgba(252,238,10,.08);
+
+}
+.sidebar-nav-btn {
+    border-radius: 0px;
+}
+.sidebar-nav-btn {
+    border-radius: 0px;
+}
+.sidebar-active {
+    border-radius: 0px;
+    background-color: var(--cyber-cyan);
+     position: relative;
+    overflow: hidden;
+    border: none;
+    border-radius: 0;
+
+    /* Cut only the bottom-right corner */
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% calc(100% - 14px),
+        calc(100% - 14px) 100%,
+        0 100%
+    );
+
+    transition: all .2s ease;
+}
+.sidebar-nav-btn{
+    border:none !important;
+    outline:none !important;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(0,255,255,.18),
+        0 0 12px rgba(0,255,255,.08);
+}
+.sidebar-active{
+    border:none !important;
+    outline:none !important;
+
+    box-shadow:
+        inset 3px 0 0 var(--cyber-cyan),
+        0 0 16px rgba(0,255,255,.20);
+}
+button {
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 0;
+
+    /* Cut only the bottom-right corner */
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% calc(100% - 14px),
+        calc(100% - 14px) 100%,
+        0 100%
+    );
+
+    transition: all .2s ease;
+}
+
+/* cyan accent corner */
+button::before {
+    content: "";
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    right: 0;
+    bottom: 0;
+
+    background:
+        linear-gradient(
+            -45deg,
+            transparent 47%,
+            var(--cyber-cyan) 48%,
+            var(--cyber-cyan) 55%,
+            transparent 56%
+        );
+
+    opacity: .9;
+}
+
+/* animated shine */
+button::after {
+    content: "";
+    position: absolute;
+    inset: -50%;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 35%,
+            rgba(255,255,255,.22),
+            transparent 65%
+        );
+
+    transform:
+        translateX(-170%)
+        rotate(8deg);
+
+    transition: .45s;
+    pointer-events: none;
+}
+
+/* Hover */
+button:hover {
+    color: #000;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8 0,
+            transparent 40%
+        ),
+        var(--cyber-yellow);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        inset 0 0 0 2px #fff,
+        0 0 10px var(--cyber-yellow),
+        0 0 25px rgba(252,238,10,.35);
+}
+
+button:hover::after {
+    transform:
+        translateX(170%)
+        rotate(8deg);
+}
+
+/* Press */
+button:active {
+    transform: translateY(1px);
+}
+
+/* Selected / toggled */
+button.selected,
+button[aria-pressed="true"],
+button:focus-visible {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.12),
+            transparent 45%
+        ),
+        var(--cyber-yellow);
+
+    color: #000;
+
+    /* Nearly identical to normal */
+    box-shadow:
+        inset 0 0 0 2px var(--cyber-cyan),
+        0 0 8px rgba(0,255,255,.35);
+}
+/* subtle idle pulse */
+
+/* ============================
+   Empty State Cyber Panel
+   ============================ */
+
+.flex-1.overflow-y-auto.relative{
+
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at top,#16223a 0%,#090911 45%,#03030d 100%);
+
+    border-left:2px solid var(--cyber-cyan);
+
+}
+
+
+
+/* Glow */
+
+.flex-1.overflow-y-auto.relative::after{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(circle at center,
+            rgba(0,240,255,.12),
+            transparent 70%);
+
+    pointer-events:none;
+
+}
+
+/* Center panel */
+
+.flex.flex-col.items-center.justify-center{
+
+    position:relative;
+
+    max-width:520px;
+
+    margin:auto;
+
+    padding:48px;
+
+    border:2px solid var(--cyber-cyan);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.03),
+            rgba(255,255,255,0)
+        ),
+        rgba(8,12,24,.92);
+
+    clip-path:polygon(
+        18px 0,
+        100% 0,
+        100% calc(100% - 18px),
+        calc(100% - 18px) 100%,
+        0 100%,
+        0 18px
+    );
+
+    box-shadow:
+        0 0 40px rgba(0,240,255,.12),
+        inset 0 0 25px rgba(0,240,255,.05);
+
+}
+
+/* Folder icon */
+
+.flex.flex-col svg{
+
+    color:var(--cyber-yellow) !important;
+
+    filter:
+        drop-shadow(0 0 12px var(--cyber-yellow));
+
+
+}
+
+/* Heading */
+
+.flex.flex-col h3{
+
+    color:var(--cyber-cyan) !important;
+
+    font-family:monospace;
+
+    text-transform:uppercase;
+
+    letter-spacing:.25em;
+
+    text-shadow:
+        0 0 8px var(--cyber-cyan);
+
+}
+
+/* Description */
+
+.flex.flex-col p{
+
+    color:#8cb6d4 !important;
+
+    font-family:monospace;
+
+    line-height:1.7;
+
+}
+
+/* Decorative HUD corners */
+
+.flex.flex-col.items-center.justify-center::before{
+
+    content:"SYSTEM READY";
+
+    position:absolute;
+
+    top:12px;
+    right:16px;
+
+    font-size:10px;
+
+    color:var(--cyber-yellow);
+
+    letter-spacing:.3em;
+
+    opacity:.8;
+
+}
+
+.flex.flex-col.items-center.justify-center::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:-2px;
+    top:-2px;
+
+    width:70px;
+    height:70px;
+
+    border-left:3px solid var(--cyber-magenta);
+    border-top:3px solid var(--cyber-magenta);
+
+}
+/* ============================
+   CYBERPUNK 2077 HUD LAYER
+   GLOBAL CRT + GLITCH OVERLAY
+   ============================ */
+
+body {
+    position: relative;
+}
+
+/* MAIN SCANLINES */
+body::before {
+    animation:
+        cp-scanMove 6s linear infinite,
+        cp-flicker 11s infinite;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2147483647;
+
+    background:
+        repeating-linear-gradient(
+            180deg,
+            rgba(255,255,255,0.00) 0px,
+            rgba(255,255,255,0.00) 2px,
+            rgba(0,255,255,0.10) 3px,
+            rgba(0,255,255,0.10) 4px
+        );
+
+    opacity: 0.6;
+}
+
+/* RGB SHIFT LAYER (very subtle chromatic distortion feel) */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10000;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,0,80,0.03),
+            rgba(0,255,255,0.03),
+            rgba(255,255,0,0.02)
+        );
+
+    mix-blend-mode: screen;
+    opacity: 0.25;
+}
+
+/* occasional HUD glitch tear */
+@keyframes cp-scanMove {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+/* SCREEN FLICKER (rare intensity shift) */
+@keyframes cp-flicker {
+    0%, 100% { opacity: 0.35; }
+    92% { opacity: 0.33; }
+    93% { opacity: 0.4; }
+    94% { opacity: 0.28; }
+    95% { opacity: 0.36; }
+}
+/* Animations */
+
+@keyframes iconFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+}
+
+@keyframes scanMove{
+
+    from{
+        background-position:0 0;
+    }
+
+    to{
+        background-position:0 8px;
+    }
+
+}
