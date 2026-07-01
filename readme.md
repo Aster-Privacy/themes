@@ -1,11 +1,11 @@
 <img width="200" alt="aster_horizontalv2" src="https://github.com/user-attachments/assets/a337e975-996d-4672-a92b-b809591f389a" />
 
-# ASTER Themes
+# Aster Themes
 
-ASTER Themes is a small CLI tool for creating themes for Aster-Apps
+Aster Themes is a small CLI tool for creating themes for Aster-Apps
 (themes are yet to be implemented, will be in a bit)
 
----
+
 
 ## Requirements
 
@@ -16,7 +16,7 @@ ASTER Themes is a small CLI tool for creating themes for Aster-Apps
 npm install args
 ```
 
----
+
 
 ## Usage
 
@@ -25,8 +25,6 @@ Run commands using:
 ```bash
 node index.js <command> [options]
 ```
-
----
 
 ## Commands
 
@@ -54,7 +52,7 @@ Generates a file like:
 theme_theme.css.json
 ```
 
----
+
 
 ### 2. Verify a local theme
 
@@ -67,7 +65,6 @@ Checks the theme for:
 * Valid signature
 * Urls
 
----
 
 ### 3. Verify a remote theme
 
@@ -75,7 +72,6 @@ Checks the theme for:
 node index.js verifylink https://example.com/theme.json
 ```
 
----
 
 ### 4. Add an author
 
@@ -85,7 +81,6 @@ Saves a new author along with their public key in `authors.json`.
 node index.js addAuthor "AuthorName" keys/pubkey.jwk "Bio text"
 ```
 
----
 
 ### 5. Show your public key
 
@@ -93,7 +88,7 @@ node index.js addAuthor "AuthorName" keys/pubkey.jwk "Bio text"
 node index.js pub
 ```
 
----
+
 
 ## Theme format
 
@@ -115,7 +110,7 @@ A generated theme looks like this:
 }
 ```
 
----
+
 
 ## Notes
 
